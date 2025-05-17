@@ -38,6 +38,14 @@ body {
 
 #map svg circle {
   pointer-events: auto;
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
 }
 
 header {
@@ -49,3 +57,32 @@ header {
 time, em {
   display: block;
 }
+
+.legend {
+  width: 90%;
+  display: flex;
+  gap: 1px; /* small separator */
+  margin-block: 10px 20px;
+  height: 2.5em;
+  font-size: 0.9em;
+  color: white;
+}
+
+.legend > div {
+  flex: 1;
+  padding: 0.3em 1.5em; /* more horizontal padding */
+  display: flex;
+  align-items: center;
+
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+
+  background-color: var(--color);
+}
+
+
