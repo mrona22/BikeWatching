@@ -10,7 +10,7 @@ let arrivalsByMinute = Array.from({ length: 1440 }, () => []);
 // Initialize the map
 const map = new mapboxgl.Map({
     container: 'map', 
-    style: 'mapbox://styles/mrona22/cmaofeuvv01a901sp6rjib1ex', 
+    style: 'mapbox://styles/mapbox/streets-v12', 
     center: [-71.09415, 42.36027], 
     zoom: 12,
     minZoom: 5,
